@@ -345,9 +345,6 @@ class Subtitles
             if ($row['start'] > $row['end']) {
                 throw new UserException('Timestamp start time is bigger than the end time near text: ' . SrtConverter::internalTimeToSrt($row['start']) . ' -> ' . SrtConverter::internalTimeToSrt($row['end']) . ' ' . $row['lines'][0]);
             }
-            if ($row['start'] == $row['end']) {
-                throw new UserException('Timestamp start and end times are equal near text: ' . SrtConverter::internalTimeToSrt($row['start']) . ' -> ' . SrtConverter::internalTimeToSrt($row['end']) . ' ' . $row['lines'][0]);
-            }
         }
 
         // no subtitles with a lot of lines
